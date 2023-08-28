@@ -518,6 +518,12 @@ body {
   -moz-hyphens: manual;
   -ms-hyphens: manual;
   -webkit-hyphens: manual;
+  padding: 2px 4px;
+  font-size: 14px;
+  color: #d14;
+  background: #faf9f9;
+  border: 1px solid #ebeaea;
+  border-radius: 1px;
 }
 .content a {
   color: #383838;
