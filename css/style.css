@@ -319,6 +319,8 @@
 body h1,
 body .h1 {
   display: block;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
   color: #2bbc8a;
   letter-spacing: 0.01em;
   font-weight: 700;
@@ -331,6 +333,8 @@ body h2,
 body .h2 {
   position: relative;
   display: block;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
   color: #383838;
   text-transform: none;
   letter-spacing: normal;
@@ -339,6 +343,7 @@ body .h2 {
 }
 body h3 {
   color: #383838;
+  text-decoration: underline;
   font-weight: bold;
   font-size: 0.9rem;
 }
@@ -350,6 +355,13 @@ body h6 {
   color: #8c8c8c;
   font-weight: bold;
   font-size: 0.9rem;
+}
+body h3,
+body h4,
+body h5,
+body h6 {
+  margin-top: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 body hr {
   border: 0.5px dashed #8c8c8c;
