@@ -323,7 +323,7 @@ body .h1 {
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
-  font-size: 27px;
+  font-size: 24px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -335,12 +335,12 @@ body .h2 {
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 23.400000000000002px;
+  font-size: 20.8px;
 }
 body h3 {
   color: #383838;
   font-weight: bold;
-  font-size: 19.8px;
+  font-size: 17.6px;
 }
 body h3 {
   margin: 10px;
@@ -397,7 +397,7 @@ body abbr {
 body ul,
 body ol,
 body dl {
-  line-height: 1.725;
+  line-height: 1.8;
 }
 body ul ul,
 body ol ul,
@@ -416,7 +416,7 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 16px;
+  font-size: 14px;
   overflow: auto;
   display: block;
 }
@@ -425,7 +425,7 @@ body th {
   border-bottom: 1px dashed #666;
   color: #383838;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 15px;
 }
 body td {
   padding: 0 8px;
@@ -494,9 +494,9 @@ body {
   background-color: #fff;
   color: #383838;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Lato", Helvetica, Arial, sans-serif;
-  line-height: 1.725;
+  line-height: 1.8;
   text-rendering: geometricPrecision;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -517,7 +517,7 @@ body {
 }
 .content code {
   padding: 2px 4px;
-  font-size: 16px;
+  font-size: 14px;
   color: #d14;
   background: #faf9f9;
   border: 1px solid #ebeaea;
@@ -1127,7 +1127,7 @@ article .content h2:before {
   color: #2bbc8a;
   content: "#";
   font-weight: bold;
-  font-size: 27px;
+  font-size: 24px;
 }
 article .content img,
 article .content video {
@@ -1424,9 +1424,9 @@ article .content .caption {
   color: #fff;
   font-display: swap;
   font-weight: 400;
-  font-size: 14.4px;
+  font-size: 12.8px;
   font-family: "Lato", Helvetica, Arial, sans-serif;
-  line-height: 1.725;
+  line-height: 1.8;
   text-rendering: geometricPrecision;
   text-align: center;
   word-wrap: break-word;
@@ -1586,11 +1586,11 @@ article .content .caption {
 }
 pre {
   overflow-x: auto;
-  padding: 10px 15px;
+  padding: 20px;
   padding-bottom: 0;
   border: 1px dotted #666;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   line-height: 22px;
   -webkit-border-radius: 4px;
@@ -1619,7 +1619,7 @@ code {
 .highlight figcaption {
   margin: -5px 0 5px;
   color: #757575;
-  font-size: 16px;
+  font-size: 14px;
   transform: scale(1);
 }
 .highlight figcaption a {
