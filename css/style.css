@@ -517,7 +517,7 @@ body {
 }
 .content code {
   padding: 2px 4px;
-  font-size: 14px;
+  font-size: 16px;
   color: #d14;
   background: #faf9f9;
   border: 1px solid #ebeaea;
@@ -1590,7 +1590,7 @@ pre {
   padding-bottom: 0;
   border: 1px dotted #666;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   line-height: 22px;
   -webkit-border-radius: 4px;
@@ -1619,14 +1619,14 @@ code {
 .highlight figcaption {
   margin: -5px 0 5px;
   color: #757575;
-  font-size: 14px;
+  font-size: 16px;
   transform: scale(1);
 }
 .highlight figcaption a {
   float: right;
   color: #757575;
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 14px;
   background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
   background-position: bottom;
   background-size: 100% 6px;
