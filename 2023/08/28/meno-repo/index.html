@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="What is a Monorepo?A Monorepo is a version-controlled code repository that refers to managing multiple projects in a single codebase, which helps simplify the complexity of code sharing, version contr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is a Monorepo?">
+<meta property="og:url" content="https://kudouhei.github.io/2023/08/28/meno-repo/index.html">
+<meta property="og:site_name" content="Hei">
+<meta property="og:description" content="What is a Monorepo?A Monorepo is a version-controlled code repository that refers to managing multiple projects in a single codebase, which helps simplify the complexity of code sharing, version contr">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://kudouhei.github.io/docs/meno_repo/compare.webp">
+<meta property="article:published_time" content="2023-08-28T16:42:20.000Z">
+<meta property="article:modified_time" content="2023-08-28T16:42:34.502Z">
+<meta property="article:author" content="Hei">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kudouhei.github.io/docs/meno_repo/compare.webp">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/hei-blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/hei-blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/hei-blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>What is a Monorepo?</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/hei-blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/hei-blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/archives/">Articles</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/hei-blog/2023/08/28/hello-world/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2023/08/28/meno-repo/"
+      ><i class="fab fa-facebook " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2023/08/28/meno-repo/&text=What is a Monorepo?"
+      ><i class="fab fa-twitter " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2023/08/28/meno-repo/&title=What is a Monorepo?"
+      ><i class="fab fa-linkedin " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2023/08/28/meno-repo/&is_video=false&description=What is a Monorepo?"
+      ><i class="fab fa-pinterest " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="mailto:?subject=What is a Monorepo?&body=Check out this article: https://kudouhei.github.io/2023/08/28/meno-repo/"
+      ><i
+        class="fa-solid fa-envelope "
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2023/08/28/meno-repo/&title=What is a Monorepo?"
+      ><i
+        class="fab fa-get-pocket "
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2023/08/28/meno-repo/&title=What is a Monorepo?"
+      ><i class="fab fa-reddit " aria-hidden="true"></i
+    ></a>
+  </li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-a-Monorepo"><span class="toc-number">1.</span> <span class="toc-text">What is a Monorepo?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Monorepo-history"><span class="toc-number">1.1.</span> <span class="toc-text">Monorepo history</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Monorepo-Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Monorepo Solution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-up-with-pnpm"><span class="toc-number">1.3.</span> <span class="toc-text">Set up with pnpm</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        What is a Monorepo?
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Hei</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-08-28T16:42:20.000Z" class="dt-published" itemprop="datePublished">2023-08-28</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="What-is-a-Monorepo"><a href="#What-is-a-Monorepo" class="headerlink" title="What is a Monorepo?"></a>What is a Monorepo?</h2><p>A Monorepo is a version-controlled code repository that refers to managing multiple projects in a single codebase, which helps simplify the complexity of code sharing, version control, construction, and deployment. While these projects may be related, they are often logically independent and run by different teams.</p>
+<h3 id="Monorepo-history"><a href="#Monorepo-history" class="headerlink" title="Monorepo history"></a>Monorepo history</h3><ul>
+<li><p>Stage one: Monolithic architecture<br>A monolithic architecture exists at the very early stage of your project. It has two main features. One code base, it is managed by only one git repo. Coupled, all features, utils and services are coupled.</p>
+<ul>
+<li>advantages: due to the simplicity of one code base, easy to develop, deploy and debug.</li>
+<li>disadvantages: appear as the application grows bigger and bigger. Making a small change requires compiling, deploying and testing the entire project. Low scalability and low flexibility.</li>
+</ul>
+</li>
+<li><p>Stage two: MultiRepo<br>The multi-repo approach uses several repositories to host the multiple libraries or services of a project developed by a company.</p>
+<ul>
+<li>advantages: code separately, independent library version, independent service releases</li>
+<li>disadvantages: hard to share resources, such as components, configs, utils, and test suites; need publish separately and manually manage the versions of these dependencies. increased risk of code changes by non-owners. increased risk of code duplication.</li>
+</ul>
+</li>
+<li><p>Stage three: MonoRepo</p>
+<ul>
+<li>advantages: easy to share resources and manage dependencies; independent and flexible, package itself can have its own dependencies as well as shared dependencies.Coding Styles</li>
+<li>disadvantages: slow git pull, git repo grows bigger and bigger; deploy coupled</li>
+</ul>
+</li>
+</ul>
+<p><img src="/hei-blog/../docs/meno_repo/compare.webp"></p>
+<h3 id="Monorepo-Solution"><a href="#Monorepo-Solution" class="headerlink" title="Monorepo Solution"></a>Monorepo Solution</h3><ul>
+<li>Lerna is a tool for managing JavaScript projects with multiple packages, built on Yarn.</li>
+<li>Turborepo is a high-performance build system for JavaScript and TypeScript codebases.</li>
+<li>pnpm is a JavaScript dependency management tool that supports monorepos through a set of dedicated commands called pnpm multi.<ul>
+<li>In pnpm, packages are always reused if they are already installed for another project saving a lot of disk space which makes it faster and more efficient than npm.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Set-up-with-pnpm"><a href="#Set-up-with-pnpm" class="headerlink" title="Set up with pnpm"></a>Set up with pnpm</h3><ol>
+<li>Install pnpm<br><code>npm install -g pnpm</code></li>
+<li>Initialize a new pnpm workspace<br>create a new folder named <code>pnpm-mono</code>, cd into it and then run <code>pnpm init</code> to generate a top-level <code>package.json</code>. This will be the root <code>package.json</code> for our PNPM monorepo.</li>
+<li>Create a <code>pnpm-workspace.yaml</code> file at the root of the repository, defining the monorepo structure<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">packages:</span><br><span class="line">  - packages/*</span><br></pre></td></tr></table></figure>
+This configuration instructs pnpm to look for all projects under the folder named packages</li>
+<li>Enable the pnpm workspaces feature in the <code>package.json</code> file in the root directory<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     &quot;name&quot;: &quot;monorepo-demo&quot;,</span><br><span class="line">     &quot;private&quot;: true,</span><br><span class="line">     &quot;workspaces&quot;: &#123;</span><br><span class="line">         &quot;packages&quot;: [&quot;packages/*&quot;]</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+<li>Create sub projects, under the packages directory</li>
+<li>To add a local dependency within a monorepo, in your <code>package.json</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;dependencies&quot;:&#123;</span><br><span class="line">     &quot;shared&quot;: &quot;workspace:*&quot; // (where &#x27;*&#x27; means &quot;any version&quot;)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+<li>Install dependencies<br>All packages can use the dependency if it is installed in the root directory. How do we install a dependency for a specific package?<br><code>pnpm --filter &lt;package_selector&gt; &lt;command&gt;</code>, such as <code>pnpm --filter @packages/shared add lodash</code></li>
+<li>if PackageA refers to packageB<br><code>pnpm --filter @packages/A add @packages/B@*</code>, <code>@*</code> denotes the latest version is synchronized by default</li>
+</ol>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/hei-blog/">Home</a></li>
+        
+          <li><a href="/hei-blog/about/">About</a></li>
+        
+          <li><a href="/hei-blog/archives/">Articles</a></li>
+        
+          <li><a href="/hei-blog/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-a-Monorepo"><span class="toc-number">1.</span> <span class="toc-text">What is a Monorepo?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Monorepo-history"><span class="toc-number">1.1.</span> <span class="toc-text">Monorepo history</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Monorepo-Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Monorepo Solution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-up-with-pnpm"><span class="toc-number">1.3.</span> <span class="toc-text">Set up with pnpm</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2023/08/28/meno-repo/"
+      ><i class="fab fa-facebook fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2023/08/28/meno-repo/&text=What is a Monorepo?"
+      ><i class="fab fa-twitter fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2023/08/28/meno-repo/&title=What is a Monorepo?"
+      ><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2023/08/28/meno-repo/&is_video=false&description=What is a Monorepo?"
+      ><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="mailto:?subject=What is a Monorepo?&body=Check out this article: https://kudouhei.github.io/2023/08/28/meno-repo/"
+      ><i
+        class="fa-solid fa-envelope fa-lg"
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2023/08/28/meno-repo/&title=What is a Monorepo?"
+      ><i
+        class="fab fa-get-pocket fa-lg"
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2023/08/28/meno-repo/&title=What is a Monorepo?"
+      ><i class="fab fa-reddit fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2023
+    Hei
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/hei-blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/archives/">Articles</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/hei-blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
