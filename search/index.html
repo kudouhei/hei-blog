@@ -7,10 +7,12 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta property="og:type" content="website">
-<meta property="og:title" content="Hei">
-<meta property="og:url" content="https://kudouhei.github.io/tags/Foo/index.html">
+<meta property="og:title" content="search">
+<meta property="og:url" content="https://kudouhei.github.io/search/index.html">
 <meta property="og:site_name" content="Hei">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-28T16:35:53.000Z">
+<meta property="article:modified_time" content="2023-08-28T16:36:02.826Z">
 <meta property="article:author" content="Hei">
 <meta name="twitter:card" content="summary">
     
@@ -32,7 +34,7 @@
       
     
     <!-- title -->
-    <title>Tag: Foo</title>
+    <title>search</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -80,49 +82,29 @@
    --><!--
      --><li><a href="/hei-blog/archives/">Articles</a></li><!--
    --><!--
-     --><li><a href="/hei-blog/tags/">Tag</a></li><!--
+     --><li><a href="/hei-blog/search/">Search</a></li><!--
    -->
     </ul>
   </div>
 </header>
 
         
-        <div id="archive">
-  <ul class="post-list">
-    
-    
-    
-    
-      
-      
-      
-      
-        <li class="post-year"><h2>2023</h2></li>
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2023-08-28T14:28:06.717Z" class="dt-published" itemprop="datePublished">2023-08-28</time>
-        
-      
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/hei-blog/2023/08/28/hello-world/">Hello World</a>
-    
-
-
-</span>
-      </li>
-    
-  </ul>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   
 
-</div>
+  <div class="content" itemprop="articleBody">
+      
+        <section id="search">
+  <form>
+    <input type="text" class="search-input" id="search-input" placeholder="Search...">
+  </form>
+  <div id="search-result"></div>
+  <p class="search-no-result">No results found.</p>
+</section>
+
+      
+  </div>
+</article>
 
         
         <footer id="footer">
@@ -143,7 +125,7 @@
      --><!--
        --><li><a href="/hei-blog/archives/">Articles</a></li><!--
      --><!--
-       --><li><a href="/hei-blog/tags/">Tag</a></li><!--
+       --><li><a href="/hei-blog/search/">Search</a></li><!--
      -->
       </ul>
     </nav>
@@ -171,6 +153,45 @@
 <script src="/hei-blog/js/main.js"></script>
 
 <!-- search -->
+
+  
+<script src="/hei-blog/js/search.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+
+    var $inputArea = $("input#search-input");
+    var $resultArea = document.querySelector("div#search-result");
+
+    $inputArea.focus(function() {
+      var search_path = "search.xml";
+      if (search_path.length == 0) {
+        search_path = "search.xml";
+      }
+      var path = "/hei-blog/" + search_path;
+      searchFunc(path, 'search-input', 'search-result');
+    });
+
+    $inputArea.keydown(function(e) {
+      if (e.which == 13) {
+        e.preventDefault();
+      }
+    });
+
+    var observer = new MutationObserver(function(mutationsList, observer) {
+      if (mutationsList.length == 1) {
+        if (mutationsList[0].addedNodes.length) {
+          $(".search-no-result").hide();
+        } else if (mutationsList[0].removedNodes.length) {
+          $(".search-no-result").show(200);
+        }
+      }
+    });
+
+    observer.observe($resultArea, { childList: true });
+
+  });
+  </script>
 
 <!-- Baidu Analytics -->
 
