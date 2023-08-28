@@ -58,9 +58,9 @@ $(document).ready(function () {
         console.log('top distance: ' + topDistance);
 
         // hide only the navigation links on desktop
-        if (!nav.is(':visible') && topDistance < 50) {
+        if (!nav.is(':visible') && topDistance < 100) {
           nav.show();
-        } else if (nav.is(':visible') && topDistance > 100) {
+        } else if (nav.is(':visible') && topDistance > 200) {
           nav.hide();
         }
         // if (!nav.is(':visible')) {
