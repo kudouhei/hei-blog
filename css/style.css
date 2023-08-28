@@ -1618,7 +1618,7 @@ code {
 .highlight figcaption {
   margin: -5px 0 5px;
   color: #757575;
-  font-size: 0.9em;
+  font-size: 14px;
   transform: scale(1);
 }
 .highlight figcaption a {
