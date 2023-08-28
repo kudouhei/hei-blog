@@ -55,16 +55,17 @@ $(document).ready(function () {
     if (menu.length) {
       $(window).on('scroll', function () {
         var topDistance = menu.offset().top;
+        console.log('top distance: ' + topDistance);
 
         // hide only the navigation links on desktop
-        // if (!nav.is(":visible") && topDistance < 50) {
-        //   nav.show();
-        // } else if (nav.is(":visible") && topDistance > 100) {
-        //   nav.hide();
-        // }
-        if (!nav.is(':visible')) {
+        if (!nav.is(':visible') && topDistance < 50) {
           nav.show();
+        } else if (nav.is(':visible') && topDistance > 100) {
+          nav.hide();
         }
+        // if (!nav.is(':visible')) {
+        //   nav.show();
+        // }
 
         // on tablet, hide the navigation icon as well and show a "scroll to top
         // icon" instead
