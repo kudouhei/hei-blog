@@ -513,11 +513,15 @@ body {
   -webkit-hyphens: auto;
   margin: 0;
 }
+.content .highlight {
+  padding: 25px;
+  margin: 0;
+  overflow: auto;
+  font-weight: 400;
+  background: #faf9f9;
+  border-radius: 4px;
+}
 .content code {
-  hyphens: manual;
-  -moz-hyphens: manual;
-  -ms-hyphens: manual;
-  -webkit-hyphens: manual;
   padding: 2px 4px;
   font-size: 14px;
   color: #d14;
