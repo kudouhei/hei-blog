@@ -1121,12 +1121,11 @@ article header .postdate {
 }
 article .content h2:before {
   position: absolute;
-  top: -4px;
   left: -1rem;
   color: #2bbc8a;
   content: "#";
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 24px;
 }
 article .content img,
 article .content video {
