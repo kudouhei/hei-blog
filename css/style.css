@@ -319,8 +319,6 @@
 body h1,
 body .h1 {
   display: block;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
   color: #2bbc8a;
   letter-spacing: 0.01em;
   font-weight: 700;
@@ -333,8 +331,6 @@ body h2,
 body .h2 {
   position: relative;
   display: block;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
   color: #383838;
   text-transform: none;
   letter-spacing: normal;
@@ -355,12 +351,14 @@ body h6 {
   font-weight: bold;
   font-size: 0.9rem;
 }
+body h1,
+body h2,
 body h3,
 body h4,
 body h5,
 body h6 {
-  margin-top: 0.9rem;
-  margin-bottom: 0.5rem;
+  margin: 0;
+  line-height: 1.5;
 }
 body hr {
   border: 0.5px dashed #8c8c8c;
@@ -515,6 +513,7 @@ body {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
+  margin: 0;
 }
 .content code {
   hyphens: manual;
