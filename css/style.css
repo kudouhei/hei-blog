@@ -323,7 +323,7 @@ body .h1 {
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
-  font-size: 25.6px;
+  font-size: 27px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -335,12 +335,12 @@ body .h2 {
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 23.400000000000002px;
 }
 body h3 {
   color: #383838;
   font-weight: bold;
-  font-size: 20.8px;
+  font-size: 19.8px;
 }
 body h3 {
   margin: 10px;
@@ -416,7 +416,7 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   overflow: auto;
   display: block;
 }
@@ -425,7 +425,7 @@ body th {
   border-bottom: 1px dashed #666;
   color: #383838;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
 }
 body td {
   padding: 0 8px;
@@ -494,7 +494,7 @@ body {
   background-color: #fff;
   color: #383838;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   line-height: 1.725;
   text-rendering: geometricPrecision;
@@ -1127,7 +1127,7 @@ article .content h2:before {
   color: #2bbc8a;
   content: "#";
   font-weight: bold;
-  font-size: 24px;
+  font-size: 27px;
 }
 article .content img,
 article .content video {
@@ -1424,7 +1424,7 @@ article .content .caption {
   color: #fff;
   font-display: swap;
   font-weight: 400;
-  font-size: 12.8px;
+  font-size: 14.4px;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   line-height: 1.725;
   text-rendering: geometricPrecision;
