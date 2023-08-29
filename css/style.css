@@ -532,6 +532,7 @@ body {
 }
 .content a.icon {
   background: none;
+  padding: 5px;
 }
 .content a.icon:hover {
   color: #d480aa;
