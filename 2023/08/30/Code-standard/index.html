@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Coding guidelines &amp; practicesTo ensure code quality and bug-free code we should follow some guidelines. Set up ESlintEslint can quickly finds problems in your code and also suggests solutions to f">
+    <meta name="description" content="To ensure code quality and bug-free code we should follow some guidelines. Set up ESlintEslint can quickly finds problems in your code and also suggests solutions to fix these problems.  install pnpm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Coding guidelines &amp; practices">
 <meta property="og:url" content="https://kudouhei.github.io/2023/08/30/Code-standard/index.html">
 <meta property="og:site_name" content="Hei">
-<meta property="og:description" content="Coding guidelines &amp; practicesTo ensure code quality and bug-free code we should follow some guidelines. Set up ESlintEslint can quickly finds problems in your code and also suggests solutions to f">
+<meta property="og:description" content="To ensure code quality and bug-free code we should follow some guidelines. Set up ESlintEslint can quickly finds problems in your code and also suggests solutions to fix these problems.  install pnpm">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-30T15:04:08.000Z">
-<meta property="article:modified_time" content="2023-08-30T15:04:37.205Z">
+<meta property="article:modified_time" content="2023-08-30T15:05:48.426Z">
 <meta property="article:author" content="Hei">
 <meta name="twitter:card" content="summary">
     
@@ -156,7 +156,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Coding-guidelines-practices"><span class="toc-number">1.</span> <span class="toc-text">Coding guidelines &amp; practices</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-up-ESlint"><span class="toc-number">1.0.1.</span> <span class="toc-text">Set up ESlint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-style-prettier"><span class="toc-number">1.0.2.</span> <span class="toc-text">Code style - prettier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Commits-style"><span class="toc-number">1.0.3.</span> <span class="toc-text">Commits style</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Husky"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">1. Husky</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Commitlint"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">2. Commitlint</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript"><span class="toc-number">1.0.4.</span> <span class="toc-text">Typescript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rollup"><span class="toc-number">1.0.5.</span> <span class="toc-text">Rollup</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-up-ESlint"><span class="toc-number">1.</span> <span class="toc-text">Set up ESlint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-style-prettier"><span class="toc-number">2.</span> <span class="toc-text">Code style - prettier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Commits-style"><span class="toc-number">3.</span> <span class="toc-text">Commits style</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Husky"><span class="toc-number">3.1.</span> <span class="toc-text">1. Husky</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Commitlint"><span class="toc-number">3.2.</span> <span class="toc-text">2. Commitlint</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript"><span class="toc-number">4.</span> <span class="toc-text">Typescript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rollup"><span class="toc-number">5.</span> <span class="toc-text">Rollup</span></a></li></ol>
       </div>
     
   </span>
@@ -196,7 +196,7 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="Coding-guidelines-practices"><a href="#Coding-guidelines-practices" class="headerlink" title="Coding guidelines &amp; practices"></a>Coding guidelines &amp; practices</h1><p>To ensure code quality and bug-free code we should follow some guidelines.</p>
+    <p>To ensure code quality and bug-free code we should follow some guidelines.</p>
 <h3 id="Set-up-ESlint"><a href="#Set-up-ESlint" class="headerlink" title="Set up ESlint"></a>Set up ESlint</h3><p>Eslint can quickly finds problems in your code and also suggests solutions to fix these problems.</p>
 <ul>
 <li>install<ul>
@@ -218,7 +218,7 @@
 <li>Prettier integrate to eslint<ul>
 <li>pnpm i eslint-config-prettier eslint-plugin-prettier -D -w<ul>
 <li>eslint-config-prettier: cover ESlint’s own rule configuration</li>
-<li>eslint-plugin-prettier: use prettier to take over repair codes<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;printWidth&quot;: 80,</span><br><span class="line">  &quot;tabWidth&quot;: 2,</span><br><span class="line">  &quot;javascript.preferences.quoteStyle&quot;: &quot;single&quot;,</span><br><span class="line">  &quot;useTabs&quot;: true,</span><br><span class="line">  &quot;singleQuote&quot;: true,</span><br><span class="line">  &quot;semi&quot;: true,</span><br><span class="line">  &quot;trailingComma&quot;: &quot;none&quot;,</span><br><span class="line">  &quot;bracketSpacing&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>eslint-plugin-prettier: use prettier to take over repair codes<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     &quot;printWidth&quot;: 80,</span><br><span class="line">     &quot;tabWidth&quot;: 2,</span><br><span class="line">     &quot;javascript.preferences.quoteStyle&quot;: &quot;single&quot;,</span><br><span class="line">     &quot;useTabs&quot;: true,</span><br><span class="line">     &quot;singleQuote&quot;: true,</span><br><span class="line">     &quot;semi&quot;: true,</span><br><span class="line">     &quot;trailingComma&quot;: &quot;none&quot;,</span><br><span class="line">     &quot;bracketSpacing&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -309,7 +309,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Coding-guidelines-practices"><span class="toc-number">1.</span> <span class="toc-text">Coding guidelines &amp; practices</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-up-ESlint"><span class="toc-number">1.0.1.</span> <span class="toc-text">Set up ESlint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-style-prettier"><span class="toc-number">1.0.2.</span> <span class="toc-text">Code style - prettier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Commits-style"><span class="toc-number">1.0.3.</span> <span class="toc-text">Commits style</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Husky"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">1. Husky</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Commitlint"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">2. Commitlint</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript"><span class="toc-number">1.0.4.</span> <span class="toc-text">Typescript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rollup"><span class="toc-number">1.0.5.</span> <span class="toc-text">Rollup</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-up-ESlint"><span class="toc-number">1.</span> <span class="toc-text">Set up ESlint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-style-prettier"><span class="toc-number">2.</span> <span class="toc-text">Code style - prettier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Commits-style"><span class="toc-number">3.</span> <span class="toc-text">Commits style</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Husky"><span class="toc-number">3.1.</span> <span class="toc-text">1. Husky</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Commitlint"><span class="toc-number">3.2.</span> <span class="toc-text">2. Commitlint</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript"><span class="toc-number">4.</span> <span class="toc-text">Typescript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rollup"><span class="toc-number">5.</span> <span class="toc-text">Rollup</span></a></li></ol>
       </div>
     
 
