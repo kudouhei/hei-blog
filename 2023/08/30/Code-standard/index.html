@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Coding guidelines &amp; practicesTo ensure code quality and bug-free code we should follow some guidelines. Set up ESlintEslint can quickly finds problems in your code and also suggests solutions to f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coding guidelines &amp; practices">
+<meta property="og:url" content="https://kudouhei.github.io/2023/08/30/Code-standard/index.html">
+<meta property="og:site_name" content="Hei">
+<meta property="og:description" content="Coding guidelines &amp; practicesTo ensure code quality and bug-free code we should follow some guidelines. Set up ESlintEslint can quickly finds problems in your code and also suggests solutions to f">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-30T15:04:08.000Z">
+<meta property="article:modified_time" content="2023-08-30T15:04:37.205Z">
+<meta property="article:author" content="Hei">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/hei-blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/hei-blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/hei-blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Coding guidelines &amp; practices</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/hei-blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/hei-blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/archives/">Articles</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/hei-blog/2023/08/28/meno-repo/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2023/08/30/Code-standard/"
+      ><i class="fab fa-facebook " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2023/08/30/Code-standard/&text=Coding guidelines &amp; practices"
+      ><i class="fab fa-twitter " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2023/08/30/Code-standard/&title=Coding guidelines &amp; practices"
+      ><i class="fab fa-linkedin " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2023/08/30/Code-standard/&is_video=false&description=Coding guidelines &amp; practices"
+      ><i class="fab fa-pinterest " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="mailto:?subject=Coding guidelines &amp; practices&body=Check out this article: https://kudouhei.github.io/2023/08/30/Code-standard/"
+      ><i
+        class="fa-solid fa-envelope "
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2023/08/30/Code-standard/&title=Coding guidelines &amp; practices"
+      ><i
+        class="fab fa-get-pocket "
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2023/08/30/Code-standard/&title=Coding guidelines &amp; practices"
+      ><i class="fab fa-reddit " aria-hidden="true"></i
+    ></a>
+  </li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Coding-guidelines-practices"><span class="toc-number">1.</span> <span class="toc-text">Coding guidelines &amp; practices</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-up-ESlint"><span class="toc-number">1.0.1.</span> <span class="toc-text">Set up ESlint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-style-prettier"><span class="toc-number">1.0.2.</span> <span class="toc-text">Code style - prettier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Commits-style"><span class="toc-number">1.0.3.</span> <span class="toc-text">Commits style</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Husky"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">1. Husky</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Commitlint"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">2. Commitlint</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript"><span class="toc-number">1.0.4.</span> <span class="toc-text">Typescript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rollup"><span class="toc-number">1.0.5.</span> <span class="toc-text">Rollup</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Coding guidelines &amp; practices
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Hei</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-08-30T15:04:08.000Z" class="dt-published" itemprop="datePublished">2023-08-30</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="Coding-guidelines-practices"><a href="#Coding-guidelines-practices" class="headerlink" title="Coding guidelines &amp; practices"></a>Coding guidelines &amp; practices</h1><p>To ensure code quality and bug-free code we should follow some guidelines.</p>
+<h3 id="Set-up-ESlint"><a href="#Set-up-ESlint" class="headerlink" title="Set up ESlint"></a>Set up ESlint</h3><p>Eslint can quickly finds problems in your code and also suggests solutions to fix these problems.</p>
+<ul>
+<li>install<ul>
+<li>pnpm i eslint -D -w</li>
+</ul>
+</li>
+<li>init<ul>
+<li>npx eslint –init</li>
+<li>pnpm i -D -w @typescript-eslint&#x2F;eslint-plugin @typescript-eslint&#x2F;parser</li>
+</ul>
+</li>
+</ul>
+<h3 id="Code-style-prettier"><a href="#Code-style-prettier" class="headerlink" title="Code style - prettier"></a>Code style - prettier</h3><p>Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules</p>
+<ul>
+<li>install<ul>
+<li>pnpm i prettier -D -w</li>
+</ul>
+</li>
+<li>Prettier integrate to eslint<ul>
+<li>pnpm i eslint-config-prettier eslint-plugin-prettier -D -w<ul>
+<li>eslint-config-prettier: cover ESlint’s own rule configuration</li>
+<li>eslint-plugin-prettier: use prettier to take over repair codes<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;printWidth&quot;: 80,</span><br><span class="line">  &quot;tabWidth&quot;: 2,</span><br><span class="line">  &quot;javascript.preferences.quoteStyle&quot;: &quot;single&quot;,</span><br><span class="line">  &quot;useTabs&quot;: true,</span><br><span class="line">  &quot;singleQuote&quot;: true,</span><br><span class="line">  &quot;semi&quot;: true,</span><br><span class="line">  &quot;trailingComma&quot;: &quot;none&quot;,</span><br><span class="line">  &quot;bracketSpacing&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Commits-style"><a href="#Commits-style" class="headerlink" title="Commits style"></a>Commits style</h3><h4 id="1-Husky"><a href="#1-Husky" class="headerlink" title="1. Husky"></a>1. Husky</h4><p>Husky improves your commits.</p>
+<ul>
+<li>install<ul>
+<li>pnpm i husky -D -w</li>
+</ul>
+</li>
+<li>init<ul>
+<li>npx husky install<ul>
+<li>create <code>.husky/dir</code> and enable git hooks</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Add a hook: pnpm lint, add to husky<ul>
+<li>npx husky add .husky&#x2F;pre-commit “pnpm lint”<ul>
+<li>To add a command to a hook or create a new one, use husky add <file> [cmd]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-Commitlint"><a href="#2-Commitlint" class="headerlink" title="2. Commitlint"></a>2. Commitlint</h4><p>Commitlint is a tool that lints your commit messages and makes sure they follow a set of rules. It runs as a husky pre-commit hook, that is, it runs before the code is committed and blocks the commit in case it fails the lint checks.</p>
+<ul>
+<li>install<ul>
+<li>pnpm i commitlint @commitlint&#x2F;cli @commitlint&#x2F;config-conventional -D -w</li>
+</ul>
+</li>
+<li>create <code>.commitlintrc.js</code> config file<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  extends: [&#x27;@commitlint/config-conventional&#x27;],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>integrate to husky<ul>
+<li>npx husky add .husky&#x2F;commit-msg “npx –no-install commitlint -e $HUSKY_GIT_PARAMS”</li>
+</ul>
+</li>
+<li>format: <code>&lt;type&gt;: &lt;subject&gt;</code><ul>
+<li>feat: add new feature</li>
+<li>fix: fix bug</li>
+<li>chore: changes do not affect functionality</li>
+<li>docs: documents</li>
+<li>perf: performance</li>
+<li>refactor: refactor</li>
+<li>test: test</li>
+</ul>
+</li>
+</ul>
+<h3 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h3><p>Typescript compiler uses tsconfig.json to get configuration options fro generating Javascript code from Typescript source code.</p>
+<ul>
+<li>create tsconfig.json<ul>
+<li>npm install typescript -g</li>
+<li>tsc –init <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;compileOnSave&quot;: true,</span><br><span class="line">  &quot;compilerOptions&quot;: &#123;</span><br><span class="line">    &quot;target&quot;: &quot;ESNext&quot;,</span><br><span class="line">    &quot;useDefineForClassFields&quot;: true,</span><br><span class="line">    &quot;module&quot;: &quot;ESNext&quot;,</span><br><span class="line">    &quot;lib&quot;: [&quot;ESNext&quot;, &quot;DOM&quot;],</span><br><span class="line">    &quot;moduleResolution&quot;: &quot;Node&quot;,</span><br><span class="line">    &quot;strict&quot;: true,</span><br><span class="line">    &quot;sourceMap&quot;: true,</span><br><span class="line">    &quot;resolveJsonModule&quot;: true,</span><br><span class="line">    &quot;isolatedModules&quot;: true,</span><br><span class="line">    &quot;esModuleInterop&quot;: true,</span><br><span class="line">    &quot;noEmit&quot;: true,</span><br><span class="line">    &quot;noUnusedLocals&quot;: true,</span><br><span class="line">    &quot;noUnusedParameters&quot;: true,</span><br><span class="line">    &quot;noImplicitReturns&quot;: false,</span><br><span class="line">    &quot;skipLibCheck&quot;: true,</span><br><span class="line">    &quot;baseUrl&quot;: &quot;./src&quot;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="Rollup"><a href="#Rollup" class="headerlink" title="Rollup"></a>Rollup</h3><p>Rollup is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library or application</p>
+<ul>
+<li>install<ul>
+<li>pnpm i -D -w rollup<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  input: &#x27;src/main.js&#x27;, // entry point</span><br><span class="line">  output: &#123;</span><br><span class="line">    file: &#x27;./dist/bundle.js&#x27;, // output</span><br><span class="line">    format: &#x27;umd&#x27;, </span><br><span class="line">    name: &#x27;pkg name&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [], // plugins config</span><br><span class="line">  external: [&#x27;lodash&#x27;], // external module</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/hei-blog/">Home</a></li>
+        
+          <li><a href="/hei-blog/about/">About</a></li>
+        
+          <li><a href="/hei-blog/archives/">Articles</a></li>
+        
+          <li><a href="/hei-blog/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Coding-guidelines-practices"><span class="toc-number">1.</span> <span class="toc-text">Coding guidelines &amp; practices</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-up-ESlint"><span class="toc-number">1.0.1.</span> <span class="toc-text">Set up ESlint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-style-prettier"><span class="toc-number">1.0.2.</span> <span class="toc-text">Code style - prettier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Commits-style"><span class="toc-number">1.0.3.</span> <span class="toc-text">Commits style</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Husky"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">1. Husky</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Commitlint"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">2. Commitlint</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript"><span class="toc-number">1.0.4.</span> <span class="toc-text">Typescript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rollup"><span class="toc-number">1.0.5.</span> <span class="toc-text">Rollup</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2023/08/30/Code-standard/"
+      ><i class="fab fa-facebook fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2023/08/30/Code-standard/&text=Coding guidelines &amp; practices"
+      ><i class="fab fa-twitter fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2023/08/30/Code-standard/&title=Coding guidelines &amp; practices"
+      ><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2023/08/30/Code-standard/&is_video=false&description=Coding guidelines &amp; practices"
+      ><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="mailto:?subject=Coding guidelines &amp; practices&body=Check out this article: https://kudouhei.github.io/2023/08/30/Code-standard/"
+      ><i
+        class="fa-solid fa-envelope fa-lg"
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2023/08/30/Code-standard/&title=Coding guidelines &amp; practices"
+      ><i
+        class="fab fa-get-pocket fa-lg"
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2023/08/30/Code-standard/&title=Coding guidelines &amp; practices"
+      ><i class="fab fa-reddit fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2023
+    Hei
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/hei-blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/archives/">Articles</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/hei-blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
