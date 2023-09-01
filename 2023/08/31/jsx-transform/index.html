@@ -14,7 +14,7 @@
 <meta property="og:description" content="What is JSXJSX stands for javascript XML. JSX means javascript execute. JSX is the Syntax Extension of javascript. It looks the same as HTML but, it is an inline markup language to create React elemen">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-31T20:39:29.000Z">
-<meta property="article:modified_time" content="2023-08-31T20:39:45.625Z">
+<meta property="article:modified_time" content="2023-09-01T09:37:03.586Z">
 <meta property="article:author" content="Hei">
 <meta name="twitter:card" content="summary">
     
@@ -156,7 +156,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-JSX"><span class="toc-number">1.</span> <span class="toc-text">What is JSX</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-JSX-transform"><span class="toc-number">1.1.</span> <span class="toc-text">The JSX transform</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Old-JSX-transform"><span class="toc-number">1.1.1.</span> <span class="toc-text">Old JSX transform</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#New-JSX-transform"><span class="toc-number">1.1.2.</span> <span class="toc-text">New JSX transform</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Implement-JSX-method"><span class="toc-number">1.2.</span> <span class="toc-text">Implement JSX method</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-JSX"><span class="toc-number">1.</span> <span class="toc-text">What is JSX</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSX-transform"><span class="toc-number">1.1.</span> <span class="toc-text">JSX transform</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Old-JSX-transform"><span class="toc-number">1.1.1.</span> <span class="toc-text">Old JSX transform</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#New-JSX-transform"><span class="toc-number">1.1.2.</span> <span class="toc-text">New JSX transform</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Implement-JSX-method"><span class="toc-number">1.2.</span> <span class="toc-text">Implement JSX method</span></a></li></ol></li></ol>
       </div>
     
   </span>
@@ -197,12 +197,12 @@
 
   <div class="content e-content" itemprop="articleBody">
     <h2 id="What-is-JSX"><a href="#What-is-JSX" class="headerlink" title="What is JSX"></a>What is JSX</h2><p>JSX stands for javascript XML. JSX means javascript execute. JSX is the Syntax Extension of javascript. It looks the same as HTML but, it is an inline markup language to create React elements and used to describe what UI should appear.</p>
-<h3 id="The-JSX-transform"><a href="#The-JSX-transform" class="headerlink" title="The JSX transform"></a>The JSX transform</h3><p>JSX is not supported by browsers. It uses compilers like Babel or Typescript to transform JSX into regular JavaScript which is processed by browsers.</p>
-<p>JSX which provides us to write HTML in react is not recognized by the browser out of the box. Therefore react developers depend on compilers similar to Babel or typescript to transform JSX code into regular JavaScript.</p>
+<h3 id="JSX-transform"><a href="#JSX-transform" class="headerlink" title="JSX transform"></a>JSX transform</h3><p>JSX is not supported by browsers. It uses compilers like Babel or Typescript to transform JSX into regular JavaScript which is processed by browsers.  </p>
+<p>JSX which provides us to write HTML in react is not recognized by the browser out of the box. Therefore react developers depend on compilers similar to Babel or typescript to transform JSX code into regular JavaScript. </p>
 <p>With the new transform, one can use JSX without importing react. Also, the compiled output may improve the bundle size which may depend on one’s setup.</p>
 <h4 id="Old-JSX-transform"><a href="#Old-JSX-transform" class="headerlink" title="Old JSX transform"></a>Old JSX transform</h4><p>The limitation of old JSX transform, we need to import React so that javascript knows what to do with the compiled code.</p>
 <p>Let us assume your code looks like as below:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import React from &#x27;react&#x27;;</span><br><span class="line">function App() &#123;</span><br><span class="line">   return &lt;div&gt;JSX transform&lt;/dive&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import React from &#x27;react&#x27;;</span><br><span class="line">function App() &#123;</span><br><span class="line">   return &lt;div&gt;JSX transform&lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>The compilers convert JSX code into regular javascript as below:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import React from &#x27;react&#x27;;</span><br><span class="line">function App() &#123;</span><br><span class="line">   return React.createElement(&#x27;div&#x27;, null, &#x27;JSX transform&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -251,7 +251,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-JSX"><span class="toc-number">1.</span> <span class="toc-text">What is JSX</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-JSX-transform"><span class="toc-number">1.1.</span> <span class="toc-text">The JSX transform</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Old-JSX-transform"><span class="toc-number">1.1.1.</span> <span class="toc-text">Old JSX transform</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#New-JSX-transform"><span class="toc-number">1.1.2.</span> <span class="toc-text">New JSX transform</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Implement-JSX-method"><span class="toc-number">1.2.</span> <span class="toc-text">Implement JSX method</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-JSX"><span class="toc-number">1.</span> <span class="toc-text">What is JSX</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSX-transform"><span class="toc-number">1.1.</span> <span class="toc-text">JSX transform</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Old-JSX-transform"><span class="toc-number">1.1.1.</span> <span class="toc-text">Old JSX transform</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#New-JSX-transform"><span class="toc-number">1.1.2.</span> <span class="toc-text">New JSX transform</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Implement-JSX-method"><span class="toc-number">1.2.</span> <span class="toc-text">Implement JSX method</span></a></li></ol></li></ol>
       </div>
     
 
