@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Reconciliation is the process by which React updates the UI to reflect the changes in the component state.When a component’s state or props change, React will compare the current virtual DOM with the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reconciler">
+<meta property="og:url" content="https://kudouhei.github.io/2023/09/05/reconciler/index.html">
+<meta property="og:site_name" content="Hei">
+<meta property="og:description" content="Reconciliation is the process by which React updates the UI to reflect the changes in the component state.When a component’s state or props change, React will compare the current virtual DOM with the">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-09-05T11:37:37.000Z">
+<meta property="article:modified_time" content="2023-09-05T12:24:20.331Z">
+<meta property="article:author" content="Hei">
+<meta property="article:tag" content="React">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/hei-blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/hei-blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/hei-blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Reconciler</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/hei-blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/hei-blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/archives/">Articles</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/hei-blog/2023/08/31/jsx-transform/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2023/09/05/reconciler/"
+      ><i class="fab fa-facebook " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2023/09/05/reconciler/&text=Reconciler"
+      ><i class="fab fa-twitter " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2023/09/05/reconciler/&title=Reconciler"
+      ><i class="fab fa-linkedin " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2023/09/05/reconciler/&is_video=false&description=Reconciler"
+      ><i class="fab fa-pinterest " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="mailto:?subject=Reconciler&body=Check out this article: https://kudouhei.github.io/2023/09/05/reconciler/"
+      ><i
+        class="fa-solid fa-envelope "
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2023/09/05/reconciler/&title=Reconciler"
+      ><i
+        class="fab fa-get-pocket "
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2023/09/05/reconciler/&title=Reconciler"
+      ><i class="fab fa-reddit " aria-hidden="true"></i
+    ></a>
+  </li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-the-Virtual-DOM"><span class="toc-number">1.</span> <span class="toc-text">What is the Virtual DOM?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-the-reconciliation-algorithm-in-React"><span class="toc-number">2.</span> <span class="toc-text">What is the reconciliation algorithm in React?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-the-role-of-keys-in-reconciliation"><span class="toc-number">3.</span> <span class="toc-text">What is the role of keys in reconciliation?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Practices-for-optimizing-reconciliation"><span class="toc-number">4.</span> <span class="toc-text">Practices for optimizing reconciliation?</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Reconciler
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Hei</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-09-05T11:37:37.000Z" class="dt-published" itemprop="datePublished">2023-09-05</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/hei-blog/tags/React/" rel="tag">React</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>Reconciliation is the process by which React updates the UI to reflect the changes in the component state.<br>When a component’s state or props change, React will compare the current virtual DOM with the updated virtual DOM and make the minimum number of changes necessary to reflect the new state.</p>
+<p>Reconciliation is a key feature of ReactJS that allows developers to build highly performant and responsive user interfaces.</p>
+<p>Important concepts behind the working of the Reconciliation process are:</p>
+<ul>
+<li>Virtual DOM</li>
+<li>Diffing algorithm</li>
+</ul>
+<h3 id="What-is-the-Virtual-DOM"><a href="#What-is-the-Virtual-DOM" class="headerlink" title="What is the Virtual DOM?"></a>What is the Virtual DOM?</h3><p>The VDOM is a lightweight in-memory representation of the actual DOM.</p>
+<p>When the state of a component changes, React compares the VDOM of the last and current states and calculates the minimum number of DOM operations required to update the actual DOM to match the current VDOM.</p>
+<h3 id="What-is-the-reconciliation-algorithm-in-React"><a href="#What-is-the-reconciliation-algorithm-in-React" class="headerlink" title="What is the reconciliation algorithm in React?"></a>What is the reconciliation algorithm in React?</h3><p>The reconciliation algorithm is React’s way of efficiently updating the DOM when the application’s state changes. It compares the current component tree (Virtual DOM) with the new one, calculates the differences (diff), and then makes the necessary updates to the actual DOM.</p>
+<h3 id="What-is-the-role-of-keys-in-reconciliation"><a href="#What-is-the-role-of-keys-in-reconciliation" class="headerlink" title="What is the role of keys in reconciliation?"></a>What is the role of keys in reconciliation?</h3><p>Keys are used to uniquely identify child elements within a component. By assigning a unique key to each child, React can quickly identify which elements have changed, and which can be reused, making the reconciliation process more efficient.</p>
+<h3 id="Practices-for-optimizing-reconciliation"><a href="#Practices-for-optimizing-reconciliation" class="headerlink" title="Practices for optimizing reconciliation?"></a>Practices for optimizing reconciliation?</h3><p>including:<br>the use of keys, avoiding unnecessary updates, using PureComponent and React.memo, optimizing component hierarchy, using keyed updates for dynamic lists, optimizing DOM manipulations</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/hei-blog/">Home</a></li>
+        
+          <li><a href="/hei-blog/about/">About</a></li>
+        
+          <li><a href="/hei-blog/archives/">Articles</a></li>
+        
+          <li><a href="/hei-blog/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-the-Virtual-DOM"><span class="toc-number">1.</span> <span class="toc-text">What is the Virtual DOM?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-the-reconciliation-algorithm-in-React"><span class="toc-number">2.</span> <span class="toc-text">What is the reconciliation algorithm in React?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-the-role-of-keys-in-reconciliation"><span class="toc-number">3.</span> <span class="toc-text">What is the role of keys in reconciliation?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Practices-for-optimizing-reconciliation"><span class="toc-number">4.</span> <span class="toc-text">Practices for optimizing reconciliation?</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2023/09/05/reconciler/"
+      ><i class="fab fa-facebook fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2023/09/05/reconciler/&text=Reconciler"
+      ><i class="fab fa-twitter fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2023/09/05/reconciler/&title=Reconciler"
+      ><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2023/09/05/reconciler/&is_video=false&description=Reconciler"
+      ><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="mailto:?subject=Reconciler&body=Check out this article: https://kudouhei.github.io/2023/09/05/reconciler/"
+      ><i
+        class="fa-solid fa-envelope fa-lg"
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2023/09/05/reconciler/&title=Reconciler"
+      ><i
+        class="fab fa-get-pocket fa-lg"
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2023/09/05/reconciler/&title=Reconciler"
+      ><i class="fab fa-reddit fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2023
+    Hei
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/hei-blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/archives/">Articles</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/hei-blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

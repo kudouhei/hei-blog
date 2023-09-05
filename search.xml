@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Reconciler</title>
+      <link href="/hei-blog/2023/09/05/reconciler/"/>
+      <url>/hei-blog/2023/09/05/reconciler/</url>
+      
+        <content type="html"><![CDATA[<p>Reconciliation is the process by which React updates the UI to reflect the changes in the component state.<br>When a component’s state or props change, React will compare the current virtual DOM with the updated virtual DOM and make the minimum number of changes necessary to reflect the new state.</p><p>Reconciliation is a key feature of ReactJS that allows developers to build highly performant and responsive user interfaces.</p><p>Important concepts behind the working of the Reconciliation process are:</p><ul><li>Virtual DOM</li><li>Diffing algorithm</li></ul><h3 id="What-is-the-Virtual-DOM"><a href="#What-is-the-Virtual-DOM" class="headerlink" title="What is the Virtual DOM?"></a>What is the Virtual DOM?</h3><p>The VDOM is a lightweight in-memory representation of the actual DOM.</p><p>When the state of a component changes, React compares the VDOM of the last and current states and calculates the minimum number of DOM operations required to update the actual DOM to match the current VDOM.</p><h3 id="What-is-the-reconciliation-algorithm-in-React"><a href="#What-is-the-reconciliation-algorithm-in-React" class="headerlink" title="What is the reconciliation algorithm in React?"></a>What is the reconciliation algorithm in React?</h3><p>The reconciliation algorithm is React’s way of efficiently updating the DOM when the application’s state changes. It compares the current component tree (Virtual DOM) with the new one, calculates the differences (diff), and then makes the necessary updates to the actual DOM.</p><h3 id="What-is-the-role-of-keys-in-reconciliation"><a href="#What-is-the-role-of-keys-in-reconciliation" class="headerlink" title="What is the role of keys in reconciliation?"></a>What is the role of keys in reconciliation?</h3><p>Keys are used to uniquely identify child elements within a component. By assigning a unique key to each child, React can quickly identify which elements have changed, and which can be reused, making the reconciliation process more efficient.</p><h3 id="Practices-for-optimizing-reconciliation"><a href="#Practices-for-optimizing-reconciliation" class="headerlink" title="Practices for optimizing reconciliation?"></a>Practices for optimizing reconciliation?</h3><p>including:<br>the use of keys, avoiding unnecessary updates, using PureComponent and React.memo, optimizing component hierarchy, using keyed updates for dynamic lists, optimizing DOM manipulations</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> React </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JSX transform</title>
       <link href="/hei-blog/2023/08/31/jsx-transform/"/>
       <url>/hei-blog/2023/08/31/jsx-transform/</url>
