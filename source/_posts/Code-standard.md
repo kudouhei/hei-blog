@@ -2,6 +2,9 @@
 title: Coding guidelines & practices 
 date: 2023-08-30 17:04:08
 tags:
+- Coding
+categories:
+- Front-end
 ---
 
 To ensure code quality and bug-free code we should follow some guidelines.

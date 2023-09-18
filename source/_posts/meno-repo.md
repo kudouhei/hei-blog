@@ -2,6 +2,9 @@
 title: What is a Monorepo?
 date: 2023-08-28 18:42:20
 tags:
+- Front-end
+categories:
+- Front-end
 ---
 
 ## What is a Monorepo?

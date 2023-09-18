@@ -4,7 +4,7 @@ date: 2023-08-31 22:39:29
 tags:
 - React
 categories:
-- Front-end
+- React
 ---
 
 ## What is JSX

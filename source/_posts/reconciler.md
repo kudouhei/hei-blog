@@ -3,6 +3,8 @@ title: React Reconciliation
 date: 2023-09-05 13:37:37
 tags:
 - React
+categories:
+- React
 ---
 
 Reconciliation is the process by which React updates the UI to reflect the changes in the component state. 
