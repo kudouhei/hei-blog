@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>React trigger update</title>
+      <link href="/hei-blog/2023/10/18/react_trigger/"/>
+      <url>/hei-blog/2023/10/18/react_trigger/</url>
+      
+        <content type="html"><![CDATA[<p>React trigger update<br>Common ways to trigger updates include<br>ReactDOM.createRoot().render or (old version ReactDOM.render)<br>this.setState<br>useState dispatch method<br>Components of the Update Mechanism<br>Data structure representing updates: Update<br>Data structure consuming updates: UpdateQueue<br>Relationship: UpdateQueue contains shared.pending, which contains updates.<br>The next steps<br>Implementing the API to be called during mount<br>Integrating this API into the update mechanism mentioned above<br>Things to consider:</p><p>Updates may occur in any component, but the update process is recursive from the root node.<br>A unified root node is needed to store common information.<br>The Fiber tree construction process during Mount<br>When ReactDOM.createRoot(root) is first executed, it creates a fiberRootNode.<br>when render(<App />) is executed, it creates a HostRootFiber, which is, in fact, a HostRoot node.<br>fiberRootNode is the root of the entire application, and HostRootFiber is the root of the component tree containing <App />.”<br>Starting from HostRootFiber, it traverses child nodes in DFS (depth-first search) order and generates corresponding FiberNodes.<br>During the traversal, it marks “flags representing different side effects” for FiberNodes for subsequent use in the host environment rendering.<br>The reason for distinguishing between fiberRootNode and HostRootFiber is that in an entire React application, developers can call the render method multiple times to render different component trees. Each of them will have a different HostRootFiber, but the root of the entire application is a single fiberRootNode.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>React Fiber</title>
       <link href="/hei-blog/2023/09/18/fiber/"/>
       <url>/hei-blog/2023/09/18/fiber/</url>
