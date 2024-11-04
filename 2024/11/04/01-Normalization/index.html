@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta property="og:type" content="article">
+    <meta name="description" content="NormalizationNormalization refers to processing feature data into a dimensionless, bounded range, typically within [0,1] or [−1,1]. In statistics, normalization helps unify the distribution characteri">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Normalization and Standardization">
 <meta property="og:url" content="https://kudouhei.github.io/2024/11/04/01-Normalization/index.html">
 <meta property="og:site_name" content="Hei">
+<meta property="og:description" content="NormalizationNormalization refers to processing feature data into a dimensionless, bounded range, typically within [0,1] or [−1,1]. In statistics, normalization helps unify the distribution characteri">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-11-04T11:15:55.000Z">
-<meta property="article:modified_time" content="2024-11-04T20:00:52.123Z">
+<meta property="article:modified_time" content="2024-11-04T20:27:44.773Z">
 <meta property="article:author" content="Hei">
 <meta property="article:tag" content="Data">
 <meta name="twitter:card" content="summary">
@@ -81,7 +83,7 @@
       <ul>
         
         
-        <li><a class="icon" aria-label="Next post" href="/hei-blog/2024/01/24/pygments/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post" href="/hei-blog/2024/01/24/pickle-python/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -154,6 +156,10 @@
     </div>
     
     
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Normalization"><span class="toc-number">1.</span> <span class="toc-text">Normalization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Standardization"><span class="toc-number">2.</span> <span class="toc-text">Standardization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Z-score"><span class="toc-number">3.</span> <span class="toc-text">Z-score</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QA"><span class="toc-number">4.</span> <span class="toc-text">QA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Why-Standardize-or-Normalize"><span class="toc-number">4.1.</span> <span class="toc-text">1. Why Standardize or Normalize?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Data-Types-to-Avoid-Scaling"><span class="toc-number">4.2.</span> <span class="toc-text">2. Data Types to Avoid Scaling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-When-to-Use-Standardization-or-Normalization"><span class="toc-number">4.3.</span> <span class="toc-text">3. When to Use Standardization or Normalization?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Is-Scaling-Always-Necessary"><span class="toc-number">4.4.</span> <span class="toc-text">4. Is Scaling Always Necessary?</span></a></li></ol></li></ol>
+      </div>
+    
   </span>
 </div>
 
@@ -201,7 +207,31 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    
+    <h2 id="Normalization"><a href="#Normalization" class="headerlink" title="Normalization"></a>Normalization</h2><p>Normalization refers to processing feature data into a dimensionless, bounded range, typically within [0,1] or [−1,1]. In statistics, normalization helps unify the distribution characteristics of a sample. When normalized within [0,1], it represents a probability distribution, while within [−1,+1], it resembles a coordinate distribution.</p>
+<p>Normalization scales data to a specific range, like ([0,1]) or ([-1,1]). Common methods:</p>
+<ul>
+<li><strong>Rescaling</strong>: [ x’ &#x3D; \frac{x - \text{min}(x)}{\text{max}(x) - \text{min}(x)} ]</li>
+<li><strong>Mean normalization</strong>: [ x’ &#x3D; \frac{x - \text{mean}(x)}{\text{max}(x) - \text{min}(x)} ]</li>
+</ul>
+<h2 id="Standardization"><a href="#Standardization" class="headerlink" title="Standardization"></a>Standardization</h2><p>Transforms data by subtracting the mean and dividing by variance:<br>[<br>x’ &#x3D; \frac{x - \overline{x}}{\sigma}<br>]<br>Standardization does not alter data distribution.</p>
+<h2 id="Z-score"><a href="#Z-score" class="headerlink" title="Z-score"></a>Z-score</h2><p>Z-score is a statistical measurement that describes a value’s relationship to the mean of a group of values. The Z-score is a way to figure out how far away a piece of data is from the average of a group, measured in standard deviations.<br>[<br>z &#x3D; \frac{x - \mu}{\sigma}<br>]<br>where </p>
+<ul>
+<li>z &#x3D; Z-score</li>
+<li>x &#x3D; the value being evaluated</li>
+<li>μ &#x3D; the mean</li>
+<li>σ &#x3D; the standard deviation</li>
+</ul>
+<h2 id="QA"><a href="#QA" class="headerlink" title="QA"></a>QA</h2><h3 id="1-Why-Standardize-or-Normalize"><a href="#1-Why-Standardize-or-Normalize" class="headerlink" title="1. Why Standardize or Normalize?"></a>1. Why Standardize or Normalize?</h3><ul>
+<li><strong>Purpose</strong>: To make features on different scales comparable without altering data distribution. For example, in a function like ( y &#x3D; x_1 + x_2 + 7 ), if ( x_1 ) ranges from ([0,1]) and ( x_2 ) from ([0,10000]), then ( x_2 ) will dominate without scaling.</li>
+<li><strong>Gradient Descent</strong>: Normalization&#x2F;standardization speeds up convergence in gradient descent optimization.</li>
+</ul>
+<h3 id="2-Data-Types-to-Avoid-Scaling"><a href="#2-Data-Types-to-Avoid-Scaling" class="headerlink" title="2. Data Types to Avoid Scaling"></a>2. Data Types to Avoid Scaling</h3><p>Sparse data should not be scaled, as scaling it would turn sparse (mostly zero) vectors into dense ones, altering their meaning significantly.</p>
+<h3 id="3-When-to-Use-Standardization-or-Normalization"><a href="#3-When-to-Use-Standardization-or-Normalization" class="headerlink" title="3. When to Use Standardization or Normalization?"></a>3. When to Use Standardization or Normalization?</h3><ul>
+<li>Use <strong>Normalization</strong> if strict range requirements apply.</li>
+<li>Choose <strong>Standardization</strong> when data contains outliers, involves distance-based similarity, or requires dimensionality reduction.</li>
+</ul>
+<h3 id="4-Is-Scaling-Always-Necessary"><a href="#4-Is-Scaling-Always-Necessary" class="headerlink" title="4. Is Scaling Always Necessary?"></a>4. Is Scaling Always Necessary?</h3><p>Not always. Models that don’t measure distance or rely on variable distribution (e.g., decision trees, probability models) generally don’t require scaling.</p>
+
   </div>
 </article>
 
@@ -226,6 +256,10 @@
     </div>
 
     
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Normalization"><span class="toc-number">1.</span> <span class="toc-text">Normalization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Standardization"><span class="toc-number">2.</span> <span class="toc-text">Standardization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Z-score"><span class="toc-number">3.</span> <span class="toc-text">Z-score</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QA"><span class="toc-number">4.</span> <span class="toc-text">QA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Why-Standardize-or-Normalize"><span class="toc-number">4.1.</span> <span class="toc-text">1. Why Standardize or Normalize?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Data-Types-to-Avoid-Scaling"><span class="toc-number">4.2.</span> <span class="toc-text">2. Data Types to Avoid Scaling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-When-to-Use-Standardization-or-Normalization"><span class="toc-number">4.3.</span> <span class="toc-text">3. When to Use Standardization or Normalization?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Is-Scaling-Always-Necessary"><span class="toc-number">4.4.</span> <span class="toc-text">4. Is Scaling Always Necessary?</span></a></li></ol></li></ol>
+      </div>
     
 
     <div id="share-footer" style="display: none">
@@ -291,6 +325,8 @@
 
     <div id="actions-footer">
         <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
         
         <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
         <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
