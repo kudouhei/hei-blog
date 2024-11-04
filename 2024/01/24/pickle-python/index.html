@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Python PicklePython pickle module is used for serializing and de-serializing a python object structure. Any object in Python can be pickled so that it can be saved on disk.Picking is a way to convert">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hei">
+<meta property="og:url" content="https://kudouhei.github.io/2024/01/24/pickle-python/index.html">
+<meta property="og:site_name" content="Hei">
+<meta property="og:description" content="Python PicklePython pickle module is used for serializing and de-serializing a python object structure. Any object in Python can be pickled so that it can be saved on disk.Picking is a way to convert">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-01-24T20:24:13.135Z">
+<meta property="article:modified_time" content="2024-01-24T20:37:51.752Z">
+<meta property="article:author" content="Hei">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/hei-blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/hei-blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/hei-blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Hei</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/hei-blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/hei-blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/archives/">Articles</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/hei-blog/2024/11/04/01-Normalization/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/hei-blog/2024/01/24/pygments/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2024/01/24/pickle-python/"
+      ><i class="fab fa-facebook " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2024/01/24/pickle-python/&text="
+      ><i class="fab fa-twitter " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2024/01/24/pickle-python/&title="
+      ><i class="fab fa-linkedin " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2024/01/24/pickle-python/&is_video=false&description="
+      ><i class="fab fa-pinterest " aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="mailto:?subject=&body=Check out this article: https://kudouhei.github.io/2024/01/24/pickle-python/"
+      ><i
+        class="fa-solid fa-envelope "
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2024/01/24/pickle-python/&title="
+      ><i
+        class="fab fa-get-pocket "
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2024/01/24/pickle-python/&title="
+      ><i class="fab fa-reddit " aria-hidden="true"></i
+    ></a>
+  </li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Pickle"><span class="toc-number">1.</span> <span class="toc-text">Python Pickle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Joblib-Module"><span class="toc-number">2.</span> <span class="toc-text">Joblib Module</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Hei</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-01-24T20:24:13.135Z" class="dt-published" itemprop="datePublished">2024-01-24</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="Python-Pickle"><a href="#Python-Pickle" class="headerlink" title="Python Pickle"></a>Python Pickle</h2><p>Python pickle module is used for serializing and de-serializing a python object structure. Any object in Python can be pickled so that it can be saved on disk.<br>Picking is a way to convert a Python object(list, dictionary, etc.) into a character stream. The idea is that this character stream contains all the information necessary to reconstruct the object in another Python script. It provides a facility to convert any Python object to a byte stream. This Byte stream contains all essential information about the object so that it can be reconstructed, or “unpickled” and get back into its original form in any Python.</p>
+<p>example</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import pickle</span><br><span class="line"></span><br><span class="line"># initializing data to be stored in db</span><br><span class="line">Omkar = &#123;&#x27;key&#x27; : &#x27;Omkar&#x27;, &#x27;name&#x27; : &#x27;Omkar Pathak&#x27;, </span><br><span class="line">&#x27;age&#x27; : 21, &#x27;pay&#x27; : 40000&#125;</span><br><span class="line">Jagdish = &#123;&#x27;key&#x27; : &#x27;Jagdish&#x27;, &#x27;name&#x27; : &#x27;Jagdish Pathak&#x27;,</span><br><span class="line">&#x27;age&#x27; : 50, &#x27;pay&#x27; : 50000&#125;</span><br><span class="line"></span><br><span class="line"># database</span><br><span class="line">db = &#123;&#125;</span><br><span class="line">db[&#x27;Omkar&#x27;] = Omkar</span><br><span class="line">db[&#x27;Jagdish&#x27;] = Jagdish</span><br><span class="line"></span><br><span class="line"># For storing</span><br><span class="line"># type(b) gives &lt;class &#x27;bytes&#x27;&gt;;</span><br><span class="line">b = pickle.dumps(db) </span><br><span class="line"></span><br><span class="line"># For loading</span><br><span class="line">myEntry = pickle.loads(b)</span><br><span class="line">print(myEntry)</span><br></pre></td></tr></table></figure>
+
+<p>Advantages of Using Pickle in Python</p>
+<ol>
+<li>Recursive objects: Pickle keeps track of the objects it has already serialized, so later references to the same object won’t be serialized again. </li>
+<li>Object sharing: This is similar to self-referencing objects. Pickle stores the object once, and ensures that all other references point to the master copy. Shared objects remain shared, which can be very important for mutable objects.</li>
+<li>User-defined classes and their instances: Pickle can save and restore class instances transparently. The class definition must be importable and live in the same module as when the object was stored.</li>
+</ol>
+<p>Disadvatages of Using Pickle in Python</p>
+<ol>
+<li>Python Version Dependency: Data of pickle is so sensitive to the version of Python that produced. Pickled object created with one version of Python that might not be unpickled with a various versions.</li>
+<li>Non-Readble: The format of pickle is binary and not easily readable or editable by humans. The contracts that are in JSON or XML format can be easily modified.</li>
+<li>Large data inefficiency: Large datasets can slow down the pickling and unpickling. Serialization might be more appropriate for such use-cases.</li>
+</ol>
+<h2 id="Joblib-Module"><a href="#Joblib-Module" class="headerlink" title="Joblib Module"></a>Joblib Module</h2><p>Joblib module can be used to dump and load different results, datasets, models, etc like the Pickle module from anywhere on the device, but we can also simply pass the path alongside the file name to load it or dump it.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import joblib</span><br><span class="line"></span><br><span class="line">data_dictionary = &#123;&#x27;books&#x27;: 12, &#x27;articles&#x27;: 100, &#x27;subjects&#x27;: [&#x27;math&#x27;, &#x27;programming&#x27;, &#x27;data science&#x27;]&#125;</span><br><span class="line">joblib.dump(value=data_dictionary, filename=&#x27;readings.job&#x27;, compress=True)</span><br><span class="line"></span><br><span class="line">data = joblib.load(filename=&#x27;readings.job&#x27;)</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/hei-blog/">Home</a></li>
+        
+          <li><a href="/hei-blog/about/">About</a></li>
+        
+          <li><a href="/hei-blog/archives/">Articles</a></li>
+        
+          <li><a href="/hei-blog/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Pickle"><span class="toc-number">1.</span> <span class="toc-text">Python Pickle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Joblib-Module"><span class="toc-number">2.</span> <span class="toc-text">Joblib Module</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2024/01/24/pickle-python/"
+      ><i class="fab fa-facebook fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2024/01/24/pickle-python/&text="
+      ><i class="fab fa-twitter fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2024/01/24/pickle-python/&title="
+      ><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2024/01/24/pickle-python/&is_video=false&description="
+      ><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="mailto:?subject=&body=Check out this article: https://kudouhei.github.io/2024/01/24/pickle-python/"
+      ><i
+        class="fa-solid fa-envelope fa-lg"
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2024/01/24/pickle-python/&title="
+      ><i
+        class="fab fa-get-pocket fa-lg"
+        aria-hidden="true"
+      ></i
+    ></a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2024/01/24/pickle-python/&title="
+      ><i class="fab fa-reddit fa-lg" aria-hidden="true"></i
+    ></a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2023-2024
+    Hei
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/hei-blog/">Home</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/archives/">Articles</a></li><!--
+     --><!--
+       --><li><a href="/hei-blog/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/hei-blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
