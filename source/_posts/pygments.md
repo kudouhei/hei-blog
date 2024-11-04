@@ -1,3 +1,13 @@
+---
+title: Pygments
+date: 2024-11-04 12:15:55
+tags:
+- Python
+categories:
+- Python
+---
+
+
 ## Pygments 代码高亮
 
 Pygments是一个基于python的代码语法高亮库。
