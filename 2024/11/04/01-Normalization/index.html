@@ -14,7 +14,7 @@
 <meta property="og:description" content="NormalizationNormalization refers to processing feature data into a dimensionless, bounded range, typically within [0,1] or [−1,1]. In statistics, normalization helps unify the distribution characteri">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-11-04T11:15:55.000Z">
-<meta property="article:modified_time" content="2024-11-04T20:27:44.773Z">
+<meta property="article:modified_time" content="2024-11-04T20:39:20.998Z">
 <meta property="article:author" content="Hei">
 <meta property="article:tag" content="Data">
 <meta name="twitter:card" content="summary">
@@ -58,8 +58,7 @@
 	
 <meta name="generator" content="Hexo 6.3.0"></head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
   <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
@@ -210,20 +209,20 @@
     <h2 id="Normalization"><a href="#Normalization" class="headerlink" title="Normalization"></a>Normalization</h2><p>Normalization refers to processing feature data into a dimensionless, bounded range, typically within [0,1] or [−1,1]. In statistics, normalization helps unify the distribution characteristics of a sample. When normalized within [0,1], it represents a probability distribution, while within [−1,+1], it resembles a coordinate distribution.</p>
 <p>Normalization scales data to a specific range, like ([0,1]) or ([-1,1]). Common methods:</p>
 <ul>
-<li><strong>Rescaling</strong>: [ x’ &#x3D; \frac{x - \text{min}(x)}{\text{max}(x) - \text{min}(x)} ]</li>
-<li><strong>Mean normalization</strong>: [ x’ &#x3D; \frac{x - \text{mean}(x)}{\text{max}(x) - \text{min}(x)} ]</li>
+<li><strong>Rescaling</strong>: [ x’ = \frac{x - \text{min}(x)}{\text{max}(x) - \text{min}(x)} ]</li>
+<li><strong>Mean normalization</strong>: [ x’ = \frac{x - \text{mean}(x)}{\text{max}(x) - \text{min}(x)} ]</li>
 </ul>
-<h2 id="Standardization"><a href="#Standardization" class="headerlink" title="Standardization"></a>Standardization</h2><p>Transforms data by subtracting the mean and dividing by variance:<br>[<br>x’ &#x3D; \frac{x - \overline{x}}{\sigma}<br>]<br>Standardization does not alter data distribution.</p>
-<h2 id="Z-score"><a href="#Z-score" class="headerlink" title="Z-score"></a>Z-score</h2><p>Z-score is a statistical measurement that describes a value’s relationship to the mean of a group of values. The Z-score is a way to figure out how far away a piece of data is from the average of a group, measured in standard deviations.<br>[<br>z &#x3D; \frac{x - \mu}{\sigma}<br>]<br>where </p>
+<h2 id="Standardization"><a href="#Standardization" class="headerlink" title="Standardization"></a>Standardization</h2><p>Transforms data by subtracting the mean and dividing by variance:<br>[<br>x’ = \frac{x - \overline{x}}{\sigma}<br>]<br>Standardization does not alter data distribution.</p>
+<h2 id="Z-score"><a href="#Z-score" class="headerlink" title="Z-score"></a>Z-score</h2><p>Z-score is a statistical measurement that describes a value’s relationship to the mean of a group of values. The Z-score is a way to figure out how far away a piece of data is from the average of a group, measured in standard deviations.<br>[<br>z = \frac{x - \mu}{\sigma}<br>]<br>where </p>
 <ul>
-<li>z &#x3D; Z-score</li>
-<li>x &#x3D; the value being evaluated</li>
-<li>μ &#x3D; the mean</li>
-<li>σ &#x3D; the standard deviation</li>
+<li>z = Z-score</li>
+<li>x = the value being evaluated</li>
+<li>μ = the mean</li>
+<li>σ = the standard deviation</li>
 </ul>
 <h2 id="QA"><a href="#QA" class="headerlink" title="QA"></a>QA</h2><h3 id="1-Why-Standardize-or-Normalize"><a href="#1-Why-Standardize-or-Normalize" class="headerlink" title="1. Why Standardize or Normalize?"></a>1. Why Standardize or Normalize?</h3><ul>
-<li><strong>Purpose</strong>: To make features on different scales comparable without altering data distribution. For example, in a function like ( y &#x3D; x_1 + x_2 + 7 ), if ( x_1 ) ranges from ([0,1]) and ( x_2 ) from ([0,10000]), then ( x_2 ) will dominate without scaling.</li>
-<li><strong>Gradient Descent</strong>: Normalization&#x2F;standardization speeds up convergence in gradient descent optimization.</li>
+<li><strong>Purpose</strong>: To make features on different scales comparable without altering data distribution. For example, in a function like ( y = x_1 + x_2 + 7 ), if ( x_1 ) ranges from ([0,1]) and ( x_2 ) from ([0,10000]), then ( x_2 ) will dominate without scaling.</li>
+<li><strong>Gradient Descent</strong>: Normalization/standardization speeds up convergence in gradient descent optimization.</li>
 </ul>
 <h3 id="2-Data-Types-to-Avoid-Scaling"><a href="#2-Data-Types-to-Avoid-Scaling" class="headerlink" title="2. Data Types to Avoid Scaling"></a>2. Data Types to Avoid Scaling</h3><p>Sparse data should not be scaled, as scaling it would turn sparse (mostly zero) vectors into dense ones, altering their meaning significantly.</p>
 <h3 id="3-When-to-Use-Standardization-or-Normalization"><a href="#3-When-to-Use-Standardization-or-Normalization" class="headerlink" title="3. When to Use Standardization or Normalization?"></a>3. When to Use Standardization or Normalization?</h3><ul>
@@ -413,6 +412,23 @@
 <!-- Disqus Comments -->
 
 <!-- utterances Comments -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

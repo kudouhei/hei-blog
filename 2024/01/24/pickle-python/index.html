@@ -58,8 +58,7 @@
 	
 <meta name="generator" content="Hexo 6.3.0"></head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
   <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
@@ -212,7 +211,6 @@
     <h2 id="Python-Pickle"><a href="#Python-Pickle" class="headerlink" title="Python Pickle"></a>Python Pickle</h2><p>Python pickle module is used for serializing and de-serializing a python object structure. Any object in Python can be pickled so that it can be saved on disk.<br>Picking is a way to convert a Python object(list, dictionary, etc.) into a character stream. The idea is that this character stream contains all the information necessary to reconstruct the object in another Python script. It provides a facility to convert any Python object to a byte stream. This Byte stream contains all essential information about the object so that it can be reconstructed, or “unpickled” and get back into its original form in any Python.</p>
 <p>example</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import pickle</span><br><span class="line"></span><br><span class="line"># initializing data to be stored in db</span><br><span class="line">Omkar = &#123;&#x27;key&#x27; : &#x27;Omkar&#x27;, &#x27;name&#x27; : &#x27;Omkar Pathak&#x27;, </span><br><span class="line">&#x27;age&#x27; : 21, &#x27;pay&#x27; : 40000&#125;</span><br><span class="line">Jagdish = &#123;&#x27;key&#x27; : &#x27;Jagdish&#x27;, &#x27;name&#x27; : &#x27;Jagdish Pathak&#x27;,</span><br><span class="line">&#x27;age&#x27; : 50, &#x27;pay&#x27; : 50000&#125;</span><br><span class="line"></span><br><span class="line"># database</span><br><span class="line">db = &#123;&#125;</span><br><span class="line">db[&#x27;Omkar&#x27;] = Omkar</span><br><span class="line">db[&#x27;Jagdish&#x27;] = Jagdish</span><br><span class="line"></span><br><span class="line"># For storing</span><br><span class="line"># type(b) gives &lt;class &#x27;bytes&#x27;&gt;;</span><br><span class="line">b = pickle.dumps(db) </span><br><span class="line"></span><br><span class="line"># For loading</span><br><span class="line">myEntry = pickle.loads(b)</span><br><span class="line">print(myEntry)</span><br></pre></td></tr></table></figure>
-
 <p>Advantages of Using Pickle in Python</p>
 <ol>
 <li>Recursive objects: Pickle keeps track of the objects it has already serialized, so later references to the same object won’t be serialized again. </li>
@@ -408,6 +406,23 @@
 <!-- Disqus Comments -->
 
 <!-- utterances Comments -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

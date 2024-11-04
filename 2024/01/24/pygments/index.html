@@ -58,8 +58,7 @@
 	
 <meta name="generator" content="Hexo 6.3.0"></head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
   <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
@@ -218,10 +217,7 @@
 <li>Style（样式） 在token流输出时，style决定了怎样高亮所有不同的token类型。它把token类型和属性关联起来，如设置字体为红色并加粗</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from pygments import highlight</span><br><span class="line">from pygments.lexers import PythonLexer</span><br><span class="line">from pygments.formatters import HtmlFormatter</span><br><span class="line"></span><br><span class="line">code = &#x27;print &quot;Hello World&quot;&#x27;</span><br><span class="line">print(highlight(code, lexer=PythonLexer(), formatter=HtmlFormatter()))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>print</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;highlight&quot;&gt;</span><br><span class="line">&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;/pre&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
+<p>print<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;highlight&quot;&gt;</span><br><span class="line">&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;/pre&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>highlight-&gt;用于生成格式化之后的代码，生成的格式由后面的formatter决定</li>
 <li>lexer-&gt;译做词法分析程序，用于判断当前输入的代码属于哪种编程语言（C、C++、Python、Java等）</li>
@@ -409,6 +405,23 @@
 <!-- Disqus Comments -->
 
 <!-- utterances Comments -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>
