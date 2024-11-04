@@ -5,6 +5,7 @@ tags:
 - Data
 categories:
 - Data
+mathjax: true
 ---
 
 ## Normalization
