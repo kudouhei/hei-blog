@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="NormalizationNormalization refers to processing feature data into a dimensionless, bounded range, typically within [0,1] or [−1,1]. In statistics, normalization helps unify the distribution characteri">
+    <meta name="description" content="Categorical featuresCategorical features are broadly classified into two groups — nominal(no particular order), ordinal (order of the data matters). NominalNominal features represent categories withou">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Normalization and Standardization">
-<meta property="og:url" content="https://kudouhei.github.io/2024/11/04/01-Normalization/index.html">
+<meta property="og:title" content="02-categorical">
+<meta property="og:url" content="https://kudouhei.github.io/2024/11/05/02-categorical/index.html">
 <meta property="og:site_name" content="Hei">
-<meta property="og:description" content="NormalizationNormalization refers to processing feature data into a dimensionless, bounded range, typically within [0,1] or [−1,1]. In statistics, normalization helps unify the distribution characteri">
+<meta property="og:description" content="Categorical featuresCategorical features are broadly classified into two groups — nominal(no particular order), ordinal (order of the data matters). NominalNominal features represent categories withou">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-11-04T11:15:55.000Z">
-<meta property="article:modified_time" content="2024-11-04T20:44:17.600Z">
+<meta property="article:published_time" content="2024-11-05T20:56:18.000Z">
+<meta property="article:modified_time" content="2024-11-05T21:26:12.681Z">
 <meta property="article:author" content="Hei">
 <meta property="article:tag" content="Data">
 <meta name="twitter:card" content="summary">
@@ -37,7 +37,7 @@
       
     
     <!-- title -->
-    <title>Normalization and Standardization</title>
+    <title>02-categorical</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -193,10 +193,8 @@ mjx-container[display="true"] + br {
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post" href="/hei-blog/2024/11/05/02-categorical/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
-        
-        <li><a class="icon" aria-label="Next post" href="/hei-blog/2024/01/24/pickle-python/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post" href="/hei-blog/2024/11/04/01-Normalization/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -212,35 +210,35 @@ mjx-container[display="true"] + br {
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2024/11/04/01-Normalization/"
+      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2024/11/05/02-categorical/"
       ><i class="fab fa-facebook " aria-hidden="true"></i
     ></a>
   </li>
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2024/11/04/01-Normalization/&text=Normalization and Standardization"
+      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2024/11/05/02-categorical/&text=02-categorical"
       ><i class="fab fa-twitter " aria-hidden="true"></i
     ></a>
   </li>
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2024/11/04/01-Normalization/&title=Normalization and Standardization"
+      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2024/11/05/02-categorical/&title=02-categorical"
       ><i class="fab fa-linkedin " aria-hidden="true"></i
     ></a>
   </li>
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2024/11/04/01-Normalization/&is_video=false&description=Normalization and Standardization"
+      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2024/11/05/02-categorical/&is_video=false&description=02-categorical"
       ><i class="fab fa-pinterest " aria-hidden="true"></i
     ></a>
   </li>
   <li>
     <a
       class="icon"
-      href="mailto:?subject=Normalization and Standardization&body=Check out this article: https://kudouhei.github.io/2024/11/04/01-Normalization/"
+      href="mailto:?subject=02-categorical&body=Check out this article: https://kudouhei.github.io/2024/11/05/02-categorical/"
       ><i
         class="fa-solid fa-envelope "
         aria-hidden="true"
@@ -250,7 +248,7 @@ mjx-container[display="true"] + br {
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2024/11/04/01-Normalization/&title=Normalization and Standardization"
+      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2024/11/05/02-categorical/&title=02-categorical"
       ><i
         class="fab fa-get-pocket "
         aria-hidden="true"
@@ -260,7 +258,7 @@ mjx-container[display="true"] + br {
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2024/11/04/01-Normalization/&title=Normalization and Standardization"
+      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2024/11/05/02-categorical/&title=02-categorical"
       ><i class="fab fa-reddit " aria-hidden="true"></i
     ></a>
   </li>
@@ -270,7 +268,7 @@ mjx-container[display="true"] + br {
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Normalization"><span class="toc-number">1.</span> <span class="toc-text">Normalization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Standardization"><span class="toc-number">2.</span> <span class="toc-text">Standardization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Z-score"><span class="toc-number">3.</span> <span class="toc-text">Z-score</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QA"><span class="toc-number">4.</span> <span class="toc-text">QA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Why-Standardize-or-Normalize"><span class="toc-number">4.1.</span> <span class="toc-text">1. Why Standardize or Normalize?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Data-Types-to-Avoid-Scaling"><span class="toc-number">4.2.</span> <span class="toc-text">2. Data Types to Avoid Scaling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-When-to-Use-Standardization-or-Normalization"><span class="toc-number">4.3.</span> <span class="toc-text">3. When to Use Standardization or Normalization?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Is-Scaling-Always-Necessary"><span class="toc-number">4.4.</span> <span class="toc-text">4. Is Scaling Always Necessary?</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Categorical-features"><span class="toc-number">1.</span> <span class="toc-text">Categorical features</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nominal"><span class="toc-number">1.1.</span> <span class="toc-text">Nominal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ordinal"><span class="toc-number">1.2.</span> <span class="toc-text">Ordinal</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#One-Hot-Encoding"><span class="toc-number">1.2.1.</span> <span class="toc-text">One Hot Encoding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Label-encoding"><span class="toc-number">1.2.2.</span> <span class="toc-text">Label encoding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Count-or-Frequency-encoding"><span class="toc-number">1.2.3.</span> <span class="toc-text">Count or Frequency encoding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Binary-encoding"><span class="toc-number">1.2.4.</span> <span class="toc-text">Binary encoding</span></a></li></ol></li></ol></li></ol>
       </div>
     
   </span>
@@ -283,7 +281,7 @@ mjx-container[display="true"] + br {
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        Normalization and Standardization
+        02-categorical
     </h1>
 
 
@@ -295,7 +293,7 @@ mjx-container[display="true"] + br {
       
     <div class="postdate">
       
-        <time datetime="2024-11-04T11:15:55.000Z" class="dt-published" itemprop="datePublished">2024-11-04</time>
+        <time datetime="2024-11-05T20:56:18.000Z" class="dt-published" itemprop="datePublished">2024-11-05</time>
         
       
     </div>
@@ -320,30 +318,23 @@ mjx-container[display="true"] + br {
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h2 id="Normalization"><a href="#Normalization" class="headerlink" title="Normalization"></a>Normalization</h2><p>Normalization refers to processing feature data into a dimensionless, bounded range, typically within [0,1] or [−1,1]. In statistics, normalization helps unify the distribution characteristics of a sample. When normalized within [0,1], it represents a probability distribution, while within [−1,+1], it resembles a coordinate distribution.</p>
-<p>Normalization scales data to a specific range, like ([0,1]) or ([-1,1]). Common methods:</p>
+    <h2 id="Categorical-features"><a href="#Categorical-features" class="headerlink" title="Categorical features"></a>Categorical features</h2><p>Categorical features are broadly classified into two groups — nominal(no particular order), ordinal (order of the data matters).</p>
+<h3 id="Nominal"><a href="#Nominal" class="headerlink" title="Nominal"></a>Nominal</h3><p>Nominal features represent categories without any inherent order or ranking.</p>
+<p>Examples:</p>
 <ul>
-<li><strong>Rescaling</strong>: [ x’ = \frac{x - \text{min}(x)}{\text{max}(x) - \text{min}(x)} ]</li>
-<li><strong>Mean normalization</strong>: [ x’ = \frac{x - \text{mean}(x)}{\text{max}(x) - \text{min}(x)} ]</li>
+<li>Colors (e.g., red, blue, green)</li>
+<li>Countries or regions</li>
+<li>Types of fruits (e.g., apple, banana, orange)</li>
+<li>gender</li>
 </ul>
-<h2 id="Standardization"><a href="#Standardization" class="headerlink" title="Standardization"></a>Standardization</h2><p>Transforms data by subtracting the mean and dividing by variance:<br>[<br>x’ = \frac{x - \overline{x}}{\sigma}<br>]<br>Standardization does not alter data distribution.</p>
-<h2 id="Z-score"><a href="#Z-score" class="headerlink" title="Z-score"></a>Z-score</h2><p>Z-score is a statistical measurement that describes a value’s relationship to the mean of a group of values. The Z-score is a way to figure out how far away a piece of data is from the average of a group, measured in standard deviations.<br>[<br>z = \frac{x - \mu}{\sigma}<br>]<br>where </p>
-<ul>
-<li>z = Z-score</li>
-<li>x = the value being evaluated</li>
-<li>μ = the mean</li>
-<li>σ = the standard deviation</li>
-</ul>
-<h2 id="QA"><a href="#QA" class="headerlink" title="QA"></a>QA</h2><h3 id="1-Why-Standardize-or-Normalize"><a href="#1-Why-Standardize-or-Normalize" class="headerlink" title="1. Why Standardize or Normalize?"></a>1. Why Standardize or Normalize?</h3><ul>
-<li><strong>Purpose</strong>: To make features on different scales comparable without altering data distribution. For example, in a function like ( y = x_1 + x_2 + 7 ), if ( x_1 ) ranges from ([0,1]) and ( x_2 ) from ([0,10000]), then ( x_2 ) will dominate without scaling.</li>
-<li><strong>Gradient Descent</strong>: Normalization/standardization speeds up convergence in gradient descent optimization.</li>
-</ul>
-<h3 id="2-Data-Types-to-Avoid-Scaling"><a href="#2-Data-Types-to-Avoid-Scaling" class="headerlink" title="2. Data Types to Avoid Scaling"></a>2. Data Types to Avoid Scaling</h3><p>Sparse data should not be scaled, as scaling it would turn sparse (mostly zero) vectors into dense ones, altering their meaning significantly.</p>
-<h3 id="3-When-to-Use-Standardization-or-Normalization"><a href="#3-When-to-Use-Standardization-or-Normalization" class="headerlink" title="3. When to Use Standardization or Normalization?"></a>3. When to Use Standardization or Normalization?</h3><ul>
-<li>Use <strong>Normalization</strong> if strict range requirements apply.</li>
-<li>Choose <strong>Standardization</strong> when data contains outliers, involves distance-based similarity, or requires dimensionality reduction.</li>
-</ul>
-<h3 id="4-Is-Scaling-Always-Necessary"><a href="#4-Is-Scaling-Always-Necessary" class="headerlink" title="4. Is Scaling Always Necessary?"></a>4. Is Scaling Always Necessary?</h3><p>Not always. Models that don’t measure distance or rely on variable distribution (e.g., decision trees, probability models) generally don’t require scaling.</p>
+<h3 id="Ordinal"><a href="#Ordinal" class="headerlink" title="Ordinal"></a>Ordinal</h3><p>Ordinal features represent categories with a meaningful order or ranking.</p>
+<h4 id="One-Hot-Encoding"><a href="#One-Hot-Encoding" class="headerlink" title="One Hot Encoding"></a>One Hot Encoding</h4><p>One-hot encoding is a method of converting categorical variables into a format that can be provided to machine learning algorithms to improve prediction. It involves creating new binary columns for each unique category in a feature. Each column represents one unique category, and a value of 1 or 0 indicates the presence or absence of that category.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd  </span><br><span class="line">df = pd.DataFrame({  </span><br><span class="line">    'gender': ['male', 'female', 'male', 'female', 'other']  </span><br><span class="line">})   </span><br><span class="line">dummies = pd.get_dummies(df['gender'])  </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">OUTPUT:</span><br><span class="line">No.  female  male  other  </span><br><span class="line">0       0     1      0  </span><br><span class="line">1       1     0      0  </span><br><span class="line">2       0     1      0  </span><br><span class="line">3       1     0      0  </span><br><span class="line">4       0     0      1</span><br></pre></td></tr></table></figure>
+<h4 id="Label-encoding"><a href="#Label-encoding" class="headerlink" title="Label encoding"></a>Label encoding</h4><p>Each unique category is assigned a unique integer, effectively converting categorical data into numerical values. Label encoding is suitable for categorical data where there is an inherent order or ranking among the categories.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.preprocessing import LabelEncoder</span><br><span class="line"></span><br><span class="line">categories = ['red', 'green', 'blue', 'red']</span><br><span class="line">encoded_categories = label_encoder.fit_transform(categories)</span><br><span class="line"></span><br><span class="line">print("Encoded categories:", encoded_categories) // 0 1 2 0</span><br></pre></td></tr></table></figure>
+<h4 id="Count-or-Frequency-encoding"><a href="#Count-or-Frequency-encoding" class="headerlink" title="Count or Frequency encoding"></a>Count or Frequency encoding</h4><p>Substitute the categories by the count of the observations that has that particular category in the dataset.</p>
+<h4 id="Binary-encoding"><a href="#Binary-encoding" class="headerlink" title="Binary encoding"></a>Binary encoding</h4><p>Binary Encoding is similar to One-Hot Encoding, but instead of creating a separate column for each category, the categories are represented as binary digits.</p>
 
   </div>
 </article>
@@ -371,7 +362,7 @@ mjx-container[display="true"] + br {
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Normalization"><span class="toc-number">1.</span> <span class="toc-text">Normalization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Standardization"><span class="toc-number">2.</span> <span class="toc-text">Standardization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Z-score"><span class="toc-number">3.</span> <span class="toc-text">Z-score</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QA"><span class="toc-number">4.</span> <span class="toc-text">QA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Why-Standardize-or-Normalize"><span class="toc-number">4.1.</span> <span class="toc-text">1. Why Standardize or Normalize?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Data-Types-to-Avoid-Scaling"><span class="toc-number">4.2.</span> <span class="toc-text">2. Data Types to Avoid Scaling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-When-to-Use-Standardization-or-Normalization"><span class="toc-number">4.3.</span> <span class="toc-text">3. When to Use Standardization or Normalization?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Is-Scaling-Always-Necessary"><span class="toc-number">4.4.</span> <span class="toc-text">4. Is Scaling Always Necessary?</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Categorical-features"><span class="toc-number">1.</span> <span class="toc-text">Categorical features</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nominal"><span class="toc-number">1.1.</span> <span class="toc-text">Nominal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ordinal"><span class="toc-number">1.2.</span> <span class="toc-text">Ordinal</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#One-Hot-Encoding"><span class="toc-number">1.2.1.</span> <span class="toc-text">One Hot Encoding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Label-encoding"><span class="toc-number">1.2.2.</span> <span class="toc-text">Label encoding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Count-or-Frequency-encoding"><span class="toc-number">1.2.3.</span> <span class="toc-text">Count or Frequency encoding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Binary-encoding"><span class="toc-number">1.2.4.</span> <span class="toc-text">Binary encoding</span></a></li></ol></li></ol></li></ol>
       </div>
     
 
@@ -380,35 +371,35 @@ mjx-container[display="true"] + br {
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2024/11/04/01-Normalization/"
+      target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kudouhei.github.io/2024/11/05/02-categorical/"
       ><i class="fab fa-facebook fa-lg" aria-hidden="true"></i
     ></a>
   </li>
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2024/11/04/01-Normalization/&text=Normalization and Standardization"
+      target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kudouhei.github.io/2024/11/05/02-categorical/&text=02-categorical"
       ><i class="fab fa-twitter fa-lg" aria-hidden="true"></i
     ></a>
   </li>
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2024/11/04/01-Normalization/&title=Normalization and Standardization"
+      target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kudouhei.github.io/2024/11/05/02-categorical/&title=02-categorical"
       ><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i
     ></a>
   </li>
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2024/11/04/01-Normalization/&is_video=false&description=Normalization and Standardization"
+      target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kudouhei.github.io/2024/11/05/02-categorical/&is_video=false&description=02-categorical"
       ><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i
     ></a>
   </li>
   <li>
     <a
       class="icon"
-      href="mailto:?subject=Normalization and Standardization&body=Check out this article: https://kudouhei.github.io/2024/11/04/01-Normalization/"
+      href="mailto:?subject=02-categorical&body=Check out this article: https://kudouhei.github.io/2024/11/05/02-categorical/"
       ><i
         class="fa-solid fa-envelope fa-lg"
         aria-hidden="true"
@@ -418,7 +409,7 @@ mjx-container[display="true"] + br {
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2024/11/04/01-Normalization/&title=Normalization and Standardization"
+      target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kudouhei.github.io/2024/11/05/02-categorical/&title=02-categorical"
       ><i
         class="fab fa-get-pocket fa-lg"
         aria-hidden="true"
@@ -428,7 +419,7 @@ mjx-container[display="true"] + br {
   <li>
     <a
       class="icon"
-      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2024/11/04/01-Normalization/&title=Normalization and Standardization"
+      target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kudouhei.github.io/2024/11/05/02-categorical/&title=02-categorical"
       ><i class="fab fa-reddit fa-lg" aria-hidden="true"></i
     ></a>
   </li>
