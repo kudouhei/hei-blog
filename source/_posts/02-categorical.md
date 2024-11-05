@@ -1,5 +1,5 @@
 ---
-title: 02-categorical
+title: Categorical features
 date: 2024-11-05 21:56:18
 tags:
 - Data
